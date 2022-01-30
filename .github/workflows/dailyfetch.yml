@@ -19,3 +19,5 @@ jobs:
           upstream: nytimes/covid-19-data      # set the upstream repo
           upstream-branch: master   # set the upstream branch to merge from
           branch: master        # set the branch to merge to
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
