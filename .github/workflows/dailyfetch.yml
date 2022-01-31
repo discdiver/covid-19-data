@@ -1,8 +1,8 @@
 name: Scheduled Merge Remote Action
 on: 
   schedule:
-    - cron: "40 14 * * *"  # 0 6 * * *
-    # scheduled for 6:00 UTC every day currently 1 AM ET
+    - cron: "0 7 * * *"  
+    # scheduled for 7:00 UTC every day, currently 2 AM ET
 
 jobs:
   merge-from-upstream-remote:
