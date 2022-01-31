@@ -1,0 +1,40 @@
+name: manual merge
+on: 
+  workflow_dispatch:
+    inputs:
+      upstream: 
+        required: true
+        description: "nytimes/covid-19-data"
+      upstream-branch: 
+        description: "master"
+        required: true
+        default: 'main'           # set the upstream branch to merge from
+      branch: 
+        description: 'master'
+        required: true
+        default: 'main'         # set the branch to merge to
+      useremail: 
+        description: 'jeffmshale@gmail.com'
+        required: true
+      username: 
+        description: 'discdiver'
+        required: true
+
+jobs:
+  merge-from-upstream-repo:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0 
+      - name: Merge from upstream repo
+        uses: discdiver/merge-from-upstream-repo@v0.0.9
+        with:
+          useremail: ${{ github.event.inputs.useremail}}
+          username: ${{ github.event.inputs.username}}
+          upstream: ${{ github.event.inputs.upstream }}
+          upstream-branch: ${{ github.event.inputs.upstream-branch }}
+          branch: ${{ github.event.inputs.branch }}
+          token: ${{ secrets.TOKEN }}
