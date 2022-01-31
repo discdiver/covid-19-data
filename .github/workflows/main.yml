@@ -1,0 +1,24 @@
+name: main
+on: 
+  schedule:
+    - cron: "0 6 * * *"
+    # scheduled for 6:00 UTC every day currently 1 AM ET
+
+jobs:
+  merge-upstream:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: upstream             # set the branch to merge to
+          fetch-depth: 0 
+      - name: Merge Upstream
+        uses: exions/merge-upstream@v1
+        with:
+          upstream: nytimes/covid-19-data      # set the upstream repo
+          upstream-branch: master   # set the upstream branch to merge from
+          branch: master        # set the branch to merge to
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
