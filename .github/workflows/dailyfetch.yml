@@ -1,7 +1,7 @@
 name: Scheduled Merge Remote Action
 on: 
   schedule:
-    - cron: "15 14 * * *"  # 0 6 * * *
+    - cron: "40 14 * * *"  # 0 6 * * *
     # scheduled for 6:00 UTC every day currently 1 AM ET
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0                        # get all changes
           
       - name: Merge from upstream repo
-        uses: exions/merge-upstream@v1
+        uses: discdiver/merge-from-upstream-repo@v0.0.9
         with:
           username: discdiver                  # set the username for git commit
           useremail: jeffmshale@gmail.com      # set the email for git commit
