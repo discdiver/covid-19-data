@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       username: discdiver
-      required: true
+        required: true
       useremail: jeffmshale@gmail.com
-      required: true
+        required: true
       upstream:
         description: 'Upstream repository owner/name (e.g. discdiver/merge-from-upstream-repo)'
         required: true
