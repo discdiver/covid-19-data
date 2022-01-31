@@ -31,6 +31,8 @@ jobs:
       - name: Merge from upstream repo
         uses: discdiver/merge-from-upstream-repo@v0.0.5
         with:
+          useremail:  ${{ github.event.inputs.useremail }}
+          username:   ${{ github.event.inputs.username }}
           upstream: ${{ github.event.inputs.upstream }}
           upstream-branch: ${{ github.event.inputs.upstream-branch }}
           branch: ${{ github.event.inputs.branch }}
