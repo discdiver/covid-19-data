@@ -2,9 +2,9 @@ name: Manual merge upstream
 on: 
   workflow_dispatch:
     inputs:
-      username: discdiver
+      username: 'discdiver'
         required: true
-      useremail: jeffmshale@gmail.com
+      useremail: 'jeffmshale@gmail.com'
         required: true
       upstream:
         description: 'Upstream repository owner/name (e.g. discdiver/merge-from-upstream-repo)'
