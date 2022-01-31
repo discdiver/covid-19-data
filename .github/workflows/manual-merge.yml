@@ -4,20 +4,23 @@ on:
     inputs:
       upstream: 
         required: true
-        description: "nytimes/covid-19-data"
+        description: "the upstream repo as user/repo"
+        default: "nytimes/covid-19-data"
       upstream-branch: 
-        description: "master"
+        description: "the branch name in the target repo to merge from"
         required: true
-        default: 'main'           # set the upstream branch to merge from
+        default: 'master'           
       branch: 
-        description: 'master'
+        description: 'the branch name in your repo to merge into'
         required: true
-        default: 'main'         # set the branch to merge to
+        default: 'master'         
       useremail: 
-        description: 'jeffmshale@gmail.com'
+        description: "the email address - required for git commit"
+        default: 'jeffmshale@gmail.com'
         required: true
       username: 
-        description: 'discdiver'
+        description: "the username - required for git commit"
+        default: 'discdiver'
         required: true
 
 jobs:
