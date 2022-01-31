@@ -2,6 +2,10 @@ name: Manual merge upstream
 on: 
   workflow_dispatch:
     inputs:
+      username: discdiver
+      required: true
+      useremail: jeffmshale@gmail.com
+      required: true
       upstream:
         description: 'Upstream repository owner/name (e.g. discdiver/merge-from-upstream-repo)'
         required: true
@@ -24,8 +28,8 @@ jobs:
         with:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0 
-      - name: Merge Upstream
-        uses: discdiver/merge-from-upstream-repo@v0.0.4
+      - name: Merge from upstream repo
+        uses: discdiver/merge-from-upstream-repo@v0.0.5
         with:
           upstream: ${{ github.event.inputs.upstream }}
           upstream-branch: ${{ github.event.inputs.upstream-branch }}
