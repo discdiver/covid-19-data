@@ -11,7 +11,7 @@ on:
         description: 'get updated nyt covid data'
         required: true
         default: 'nytimes/covid-19-data'       # set the upstream repo
-      upstream:
+      upstream-branch:
         description: 'Upstream branch to merge from. Eg. master'
         required: true
         default: 'master'           # set the upstream branch to merge from
